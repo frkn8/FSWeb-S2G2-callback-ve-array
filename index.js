@@ -17,6 +17,7 @@ const { fifaData } = require('./fifa.js')
 //(e) 2014 Dünya kupası finali kazananı*/
 
 
+
 /*  Görev 2: 
 	Finaller adlı fonksiyonu kullanarak aşağıdakileri uygulayın:
 	1. Bir dizi(array) olan Fifa datasını fonksiyonun birinci parametresi olarak alacak
@@ -25,12 +26,15 @@ const { fifaData } = require('./fifa.js')
 	💡 İPUCU - verilen data içindeki nesnelerin(objects) "Stage" anahtarına bakmalısınız
 */
 
-function Finaller(/* kodlar buraya */) {
-	
+function Finaller(finalOyunu) {
+
+	const filtrelenecekler = finalOyunu.filter ((final) => final["Stage"] === "Final");
+	const filtrelenendData = filtrelenecekler;
     /* kodlar buraya */
+	return filtrelenendData;
 }
 
-
+console.log(Finaller(fifaData));
 
 /*  Görev 3: 
 	Bir higher-order fonksiyonu olan Yillar isimli fonksiyona aşağıdakileri uygulayın: 
