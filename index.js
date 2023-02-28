@@ -43,12 +43,21 @@ console.log(Finaller(fifaData));
 	3. Finaller data setindeki tüm yılları içeren "years" adındaki diziyi(array) döndürecek
 	*/
 
-function Yillar(/* kodlar buraya */) {
-	
-    /* kodlar buraya */
-}
 
+	function Yillar(allData, finalStage){
+		return finalStages(allData).map((x)=>x.Year);
+		console.log(Yillar(fifaData, Finaller));
+	}
+/*
+	function Yillar(fifaP, FinallerCB) {
+		const finalMaclar = FinallerCB(fifaP);
+		const yillar = finalMaclar.map(x => x.Year);
+		return yillar;
+		 }
+		 
+		 console.log(Yillar(fifaData, Finaller));
 
+*/
 /*  Görev 4: 
 	Bir higher-order fonksiyonunu olan Kazananlar isimli fonksiyona aşağıdakileri uygulayın:  
 	1. fifaData dizisini(array) fonksiyonunun birinci parametresi olarak alacak
@@ -57,13 +66,13 @@ function Yillar(/* kodlar buraya */) {
 	💡 İPUCU: Beraberlikler(ties) için şimdilik endişelenmeyin (Detaylı bilgi için README dosyasına bakabilirsiniz.)
 	4. Tüm kazanan ülkelerin isimlerini içeren `kazananlar` adında bir dizi(array) döndürecek(return)  */ 
 
-function Kazananlar(/* kodlar buraya */) {
-	
+	function Kazananlar(fifaP, FinallerCB) {
     /* kodlar buraya */
-	
-}
 
-
+		const finalMaclar = FinallerCB(fifaP).map((mac, i) => mac["Home Team Goals"] > mac["Away Team Goals"] ? mac["Home Team Name"] : mac["Away Team Name"]);
+		return finalMaclar;
+	}
+	console.log(Kazananlar(fifaData, Finaller));
 
 /*  Görev 5: 
 	Bir higher-order fonksiyonu olan YillaraGoreKazananlar isimli fonksiyona aşağıdakileri uygulayın:
